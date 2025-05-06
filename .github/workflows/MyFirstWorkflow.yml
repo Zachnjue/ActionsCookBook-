@@ -1,5 +1,5 @@
 # A first workflow to play around with the editor
-name: My First Worklfow
+name: My First Workflow
 on:
   push:
     branches:
@@ -9,10 +9,8 @@ on:
 jobs:
   first_job:
     name: My first job
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest  # ✅ Fixed here
     steps:
-      - run: echo "Hello World from ${{ github.actor}}"
+      - run: echo "Hello World from ${{ github.actor }}"
       - name: Checkout
         uses: actions/checkout@v4.2.2
-
-        
