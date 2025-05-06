@@ -1,11 +1,7 @@
-name: Run with reusable workflow
+name: Run with Reusable Workflow
 
 on:
-  workflow_dispatch: # Manually trigger the workflow
-
-defaults:
-  run:
-    shell: bash
+  workflow_dispatch:
 
 jobs:
   job-1:
@@ -22,12 +18,12 @@ jobs:
 
   job-2:
     needs: job-1
-    uses: ./.github/workflows/reusable-workflow.yml@main # We do not need to check out the repository to use the reusable workflow
+    uses: .github/workflows/reusable-workflow.yml  # ✅ LOCAL REFERENCE (no @main)
     with:
       reusable_input: "job-2-input"
       filename: "input.txt"
-    secrets: # Can also implicitly pass the secrets with: secrets: inherit
-      HELLO_WORLD_SECRET: TERCES_DLROW_OLLEH
+    secrets:
+      HELLO_WORLD_SECRET: ${{ secrets.HELLO_WORLD_SECRET }}
 
   job-3:
     needs: job-2
