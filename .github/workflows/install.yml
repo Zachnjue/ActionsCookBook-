@@ -7,7 +7,7 @@ jobs:
   install-and-test:
     uses: Zachnjue/nodejs/.github/workflows/install.yml@main
     with:
-    #   node-version: '20'
+      node-version: '18'
       install-command: 'npm install'
     # secrets:
     #   token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}
