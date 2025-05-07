@@ -9,5 +9,5 @@ jobs:
     with:
     #   node-version: '20'
       install-command: 'npm install'
-    secrets:
-      token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}
+    # secrets:
+    #   token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}
